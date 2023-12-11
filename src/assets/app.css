@@ -1,0 +1,36 @@
+.table .complete select{
+    background-color: lightgreen;
+}
+.table .downloading select{
+    background-color: lightgoldenrodyellow;
+}
+.table .Algus select{
+    background-color: lightblue;
+}
+.table .asd select{
+    background-color: lightyellow;
+}
+.table .server select{
+    background-color: lightpink;
+}
+.table thead{
+    position: sticky;
+    top: 112px;
+    background: white;
+    border-bottom: solid gray 1px;
+}
+.select-machine{
+    display: flex;
+    align-items: center;
+}
+.select-machine select{
+    margin-left: 8px;
+}
+.status-bar{
+    position: sticky;
+    top: 48px;
+    background: white;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-around;
+}
