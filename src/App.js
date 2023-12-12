@@ -104,7 +104,7 @@ function App() {
       <ComponentLoading isLoading={loading}>
         <div className="status-bar">
           <b>
-            Completed count: {completedCount}, Completed size: {completedSize} GB, Total size: {totalSize} GB
+            Completed count: {completedCount}/{data.length}, Completed size: {Math.floor(completedSize * 100) / 100} GB, Total size: {totalSize} GB
           </b>
           <div className="select-machine">
             Select current machine:{" "}
