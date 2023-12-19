@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://kang:3000';
+export const BASE_URL = "http://108.181.255.16:3000";

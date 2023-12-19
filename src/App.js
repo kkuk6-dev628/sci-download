@@ -111,7 +111,7 @@ function App() {
             <SelectInput
               class
               onChange={(e) => setCurrentMachine(e.target.value)}
-              options={["server", "Algus", "asd"]}
+              options={["server", "Algus", "asd", "Kang"]}
             />
           </div>
         </div>
@@ -119,19 +119,26 @@ function App() {
           <thead>
             <tr>
               <th scope="col">ID</th>
+              <th scope="col">Action</th>
               <th scope="col">Name</th>
               <th scope="col">Status</th>
               <th scope="col">Download Machine</th>
               <th scope="col">Link</th>
               <th scope="col">Size</th>
               <th scope="col">Seeder's</th>
-              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
             {data?.map((item, index) => (
               <tr>
                 <td>{item?.id}</td>
+                <td>
+                  <Button
+                    className={"btn-sm"}
+                    onClick={() => downloadButtonAction(item?.link, item?.name, item?.id)}
+                    label="Download"
+                  />
+                </td>
                 <td>{item?.name}</td>
                 <td className={item?.status}>
                   <SelectInput
@@ -145,7 +152,7 @@ function App() {
                   <SelectInput
                     defaultOption={"Machine"}
                     value={item?.machine}
-                    options={["Algus", "server", "asd"]}
+                    options={["Algus", "server", "asd", "Kang"]}
                     onChange={(e) => updateStatus(item.id, item.status, e.target.value)}
                   />
                 </td>
@@ -156,13 +163,6 @@ function App() {
                 </td>
                 <td>{item?.size}</td>
                 <td>{item?.seeders}</td>
-                <td>
-                  <Button
-                    className={"btn-sm"}
-                    onClick={() => downloadButtonAction(item?.link, item?.name, item?.id)}
-                    label="Download"
-                  />
-                </td>
               </tr>
             ))}
           </tbody>
